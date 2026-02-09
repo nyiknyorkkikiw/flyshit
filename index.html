@@ -1,8 +1,117 @@
 <!DOCTYPE html>
-<html>
-<body style="background:black;color:white">
-  <h1 onclick="alert('clicked')">LAURENCE</h1>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laurence</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+/* background */
+video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* screens */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+/* intro */
+.intro {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: .4em;
+  cursor: pointer;
+}
+
+/* socials */
+.socials {
+  opacity: 0;
+  pointer-events: none;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* buttons */
+.socials a {
+  color: white;
+  border: 2px solid white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+.socials a:hover {
+  background: white;
+  color: black;
+}
+
+/* active state */
+body.active .intro {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.1);
+}
+
+body.active .socials {
+  opacity: 1;
+  pointer-events: auto;
+}
+</style>
+</head>
+
+<body>
+
+<video autoplay muted loop playsinline src="khenbanks/percsaine.html"></video>
+
+<div class="screen intro" onclick="enterSite()">LAURENCE</div>
+
+<div class="screen socials">
+  <a href="https://discord.com/users/683624211570360334" target="_blank">Discord</a>
+  <a href="https://www.youtube.com/@CR4CKK" target="_blank">YouTube</a>
+  <a href="https://open.spotify.com/user/21ag35cyjhro3qmgshp72yjga" target="_blank">Spotify</a>
+</div>
+
+<script>
+function enterSite() {
+  document.body.classList.add("active");
+}
+</script>
+
+<!-- SAFE anti-inspect -->
+<script>
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("keydown", e => {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+
 </body>
 </html>
-
-<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
