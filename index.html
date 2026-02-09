@@ -1,128 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAURENCE Popup Example</title>
-    <style>
-        /* Body & font */
-        body {
-            margin: 0;
-            font-family: Poppins, sans-serif;
-            color: white;
-            overflow: hidden;
-            background: #000000;
-        }
-
-        /* Fullscreen video background */
-        #bgVideo {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        /* Main content */
-        #mainContent {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        #mainContent h1 {
-            font-size: 3rem;
-        }
-
-        /* Popup overlay */
-        #popupOverlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.95);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        #popupOverlay h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        #popupOverlay a {
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: transform 0.2s, color 0.2s;
-        }
-
-        #popupOverlay a:hover {
-            color: #ffff00;
-            transform: scale(1.1);
-        }
-
-        #popupOverlay button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            background: #ffffff;
-            border: none;
-            border-radius: 0.4rem;
-            color: #000000;
-            transition: background 0.2s;
-        }
-
-        #popupOverlay button:hover {
-            background: #ffff00;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAURENCE</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Poppins, sans-serif;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+    }
+    /* Background video full screen */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    /* Centered content */
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  </style>
 </head>
 <body>
-    <!-- Background video -->
-    <video id="bgVideo" loop muted autoplay playsinline>
-        <source src="khenbanks/percsaine.html" type="video/mp4">
-    </video>
+  <!-- Background Video -->
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="khenbanks/percsaine.html" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <!-- Main content -->
-    <div id="mainContent">
-        <h1>Click Anywhere</h1>
-    </div>
+  <!-- Centered Text -->
+  <div class="content">
+    <h1>LAURENCE</h1>
+  </div>
 
-    <!-- Popup overlay -->
-    <div id="popupOverlay">
-        <h2>My Social Links</h2>
-        <a href="https://www.youtube.com/@CR4CKK" target="_blank">YouTube</a>
-        <a href="https://open.spotify.com/user/21ag35cyjhro3qmgshp72yjga?si=82eb88b4f285480c" target="_blank">Spotify</a>
-        <button onclick="closePopup()">Close</button>
-    </div>
-
-    <script>
-        const mainContent = document.getElementById('mainContent');
-        const popupOverlay = document.getElementById('popupOverlay');
-
-        // Show popup on click
-        mainContent.addEventListener('click', () => {
-            popupOverlay.style.display = 'flex';
-        });
-
-        // Close popup function
-        function closePopup() {
-            popupOverlay.style.display = 'none';
-        }
-    </script>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://cdn.discordapp.com/attachments/1109090602475327523/1250415636182728764/y2mate.com_-_NIO_1NTRO_Official_Audio.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
